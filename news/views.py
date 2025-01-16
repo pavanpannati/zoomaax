@@ -80,7 +80,7 @@ def route_video(request,pk):
 @receiver(post_save,sender=video)
 def alert_mails(sender,instance,created,**kwargs):
     if created:
-        subscribers=subscription_alert.objects.filter(is_active=True)
-        subject=f"Update in {sender._name_}"
-        message=f"Dear subscriber, \n Information is been added : {instance}"
+        subscribers=subscription_alert.objects.filter(is_active=True).values_list('Email',flat=True)
+        subject=f"Update in {sender.__name__}"
+        message=f"Dear subscriber, \nInformation is been added : {instance}"
         send_mail(subject,message,settings.DEFAULT_FROM_EMAIL,subscribers)
