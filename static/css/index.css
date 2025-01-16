@@ -1,7 +1,10 @@
 .Navbar{
     background-color: none;
+    justify-content: space-between;
     display: flex;
     gap:2%;
+    align-items: center;
+    padding: 10px 20px;
 }
 .Navbar a{
     text-decoration: none;
@@ -14,8 +17,8 @@ a:last-of-type{
     padding-right: 1px;
 }
 .Navbar h1{
-    padding-left: 5%;
-    padding-right: 20%;
+
+    padding-right: 10%;
     letter-spacing: 2px;
     color:rgba(185, 4, 4, 0.5);
 }

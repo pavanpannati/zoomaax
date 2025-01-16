@@ -27,7 +27,7 @@ def home_view(request):
             else:
                 form_copy=form.save()
                 subject='Thank you for subscribing Zoomaax'
-                message='Dear {form_copy.First_name} {form_copy.Last_name},\n content\n\n\n\\n Regards,\n Zoomaax News.'
+                message=f'Dear {form_copy.First_name} {form_copy.Last_name},\n content\n\n\n\\n Regards,\n Zoomaax News.'
                 send_mail(subject,message,settings.DEFAULT_FROM_EMAIL,[email])
                 
     form=subscription_forms()
