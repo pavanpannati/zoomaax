@@ -1,0 +1,31 @@
+
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Movie Reviews</h1>
+    <div class="container">
+    {% for news in review %}
+        <a href="{% url 'route_reviews' news.id %}"><div class="card">
+            <img src="{{news.img.url}}" alt="{news.title}">
+             <div class="card-img-overlay">
+                <p class="card-text">{{news.date}}</p>
+            </div> 
+            <div class="card-body">
+                <h3 class="card-title">
+                      {{news.title}}  
+                </h3>
+                <p>Read more...</p>
+            </div>
+        </div></a>
+    {% endfor %}
+    </div>
+</body>
+</html>

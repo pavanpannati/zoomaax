@@ -1,0 +1,113 @@
+{% include 'navbar.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Entertainment News </h2>
+        <h2 class="inline"><a href="{% url 'news'%}">view all >></a></h2> 
+        <hr>
+        <div class="sub-container">
+            
+            {% for news in news %}
+            <a href="{% url 'route_news' news.id %}" class="a">  
+                <div class="card">
+                <img src="{{news.img.url}}" class='card-img' alt="{{news.title}">
+                 <div class="card-img-overlay">
+                    <p class="card-text">{{news.date}}</p>
+                </div> 
+                <div class="card-body">
+                    <h3 class="card-title">
+                          {{news.title}} 
+                        </h3>
+                         <a href="{% url 'route_news' news.id %}"> <p> Read more.....</p></a>
+                    
+                </div>
+            </div></a>
+                {% endfor %}
+        </div>
+        <br>
+        <h2>Articles</h2>
+        <h2 class="inline"><a href="{% url 'article'%}">view all >></a></h2> 
+        <hr>
+        <div class="sub-container">
+            
+            {% for news in article %}
+            <a href="{% url 'route_article' news.id %}"  class="a">
+            <div class="card">
+                <img src="{{news.img.url}}" alt="{news.title}" class="card-img">
+                 <div class="card-img-overlay">
+                    <p class="card-text">{{news.date}}</p>
+                </div> 
+                <div class="card-body">
+                    <h3 class="card-title">
+                          {{news.title|slice:':50'}}
+                        </h3>
+                    <a href="{% url 'route_article' news.id %}">  Read more.....</a>
+                    
+                </div></div></a>
+                {% endfor %}
+        </div>
+        <br>
+            <h2>Movie Reviews</h2>
+            <h2 class="inline"><a href="{% url 'reviews'%}">view all >></a></h2> 
+            <hr>
+        <div class="sub-container">
+            
+            {% for news in review %}
+            <a href="{% url 'route_reviews' news.id %}"  class="a">
+            <div class="card">
+                <img src="{{news.img.url}}" alt="{news.title}" class='card-img'>
+                 <div class="card-img-overlay">
+                    <p class="card-text">{{news.date}}</p>
+                </div> 
+                <div class="card-body">
+                    <h3 class="card-title">
+                          {{news.title}} 
+                        </h3>
+                 <a href="{% url 'route_reviews' news.id %}">  Read more.....</a>
+                    
+                </div></div></a>
+                {% endfor %}
+        </div>
+        <br>
+        <h2>Video</h2>
+        <h2 class="inline"><a href="{% url 'video'%}">view all >></a></h2> 
+        <hr>
+        <div class="sub-container">
+            
+            {% for news in videos %}
+            <a href="{% url 'route_video' news.id %}" class="a"> 
+            <div class="card">
+                <img src="{{news.img.url}}" alt="{news.title}" class='card-img'>
+                 <div class="card-img-overlay">
+                    <p class="card-text">{{news.date}}</p>
+                </div> 
+                <div class="card-body">
+                    <h3 class="card-title">
+                          {{news.title}} 
+                        </h3>
+                 <a href="{% url 'route_video' news.id %}">  Read more.....</a>
+                    
+                </div></div></a>
+                {% endfor %}
+        </div>
+        <form action="" method="post">
+            <div class="jumbotron">
+                <h1>Subscription Alert</h1>
+            {% csrf_token %}
+            {% bootstrap_form form%}
+            <input type="submit" class="btn btn-danger" value="Subscribe">
+           
+        <br><br></div>
+        </form>
+    </div>
+</body>
+</html>

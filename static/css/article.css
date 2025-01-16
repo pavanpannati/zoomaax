@@ -1,0 +1,34 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+  
+}
+
+
+.card{
+    background-color:rgba(0,0,0,0.1);
+    border: 5px;
+    border-color: white solid;
+    border-radius: 15px ;
+    border: 1px solid white;
+    box-shadow: 5px 5px 4px #f9f6f6cf;
+}
+#image{
+    padding: 10px;
+
+}
+.card h3{
+    color:rgba(61, 196, 178, 0.918);
+}
+.card p{
+    color:rgb(207, 195, 195);
+}
+.a{
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+    color: aliceblue;
+
+}

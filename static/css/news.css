@@ -1,0 +1,22 @@
+.container{
+    display:grid;
+    gap: 15px;
+    grid-template-columns: repeat(3,1fr);
+}
+h1{
+  
+    text-align: center;
+    letter-spacing: 2px;
+    color: rgb(183, 178, 178);
+   
+}
+.card{
+    background-color: rgba(133, 108, 94, 0.825);
+    box-shadow:5px 5px 4px #f9f6f6cf;
+}
+.card img{
+    padding: 10px;
+}
+.a{
+    text-decoration: none;
+}

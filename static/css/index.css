@@ -1,0 +1,37 @@
+.Navbar{
+    background-color: none;
+    display: flex;
+    gap:2%;
+}
+.Navbar a{
+    text-decoration: none;
+    color: lightblue;
+    padding-top: 1%;
+
+    
+}
+a:last-of-type{
+    padding-right: 1px;
+}
+.Navbar h1{
+    padding-left: 5%;
+    padding-right: 20%;
+    letter-spacing: 2px;
+    color:rgba(185, 4, 4, 0.5);
+}
+
+body{
+    background: linear-gradient(to left,black,black);
+    
+}
+.Navbar a:focus{
+    color:rgb(159, 28, 28);
+}
+.Navbar a h4:hover{
+    color:rgb(159, 28, 28);
+}
+img{
+   display: block;
+   margin: 0 auto;
+   
+}

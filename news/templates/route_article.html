@@ -1,0 +1,28 @@
+
+{% include 'navbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/route_article.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{table}}</h1>
+     <hr>
+    <div class="container">
+        <strong><h2>{{item.title}}</h2></strong>
+        <img src="{{item.img.url}}" alt="">
+        {% if item.img1 %}
+        <video controls width="100%">
+            <source src="{{item.img.url}}">
+        </video>
+        {% endif %}
+        <h6>{{item.date}}</h6>
+        <p>{{item.description}}</p>
+    </div>
+</body>
+</html>

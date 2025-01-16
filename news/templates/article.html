@@ -1,0 +1,33 @@
+{% include 'navbar.html' %}
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <h1>News Articles</h1>
+    <hr>
+    <div class="container">
+        
+        {% for news in article %}
+        <a href="{% url 'route_article' news.id %}" class='a'><div class="card">
+            <img src="{{news.img.url}}" alt="{news.title}" class="card-img" id="image">
+             <div class="card-img-overlay">
+                <p class="card-text">{{news.date}}</p>
+            </div> 
+            <div class="card-body">
+                <h3 class="card-title">
+                      {{news.title}}  
+                </h3>
+            </div>
+        </div></a>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

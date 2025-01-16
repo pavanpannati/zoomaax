@@ -1,0 +1,22 @@
+.container{
+    background-color: hsl(160, 84%, 5%);
+    border-radius: 10px;
+    border: 1px solid rgb(222, 215, 215);
+    box-shadow: 4px 4px 4px #f9f6f6cf;
+
+}
+.container h2{
+    color: whitesmoke;
+
+}
+.container p,h6{
+    color:rgb(206, 206, 206);
+}
+
+h1{
+    color:rgb(198, 192, 192);
+    letter-spacing: 3px;
+    text-shadow: 1px;
+    text-align: center;
+    font-family:sans-serif;
+}
